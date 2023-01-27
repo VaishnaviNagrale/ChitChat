@@ -61,7 +61,7 @@ class _ChatScreenState extends State<ChatScreen>{
                // });
               }),
         ],
-        title: Text('✨Chat Screen'),
+        title: Text('✨Chating Screen'),
         backgroundColor: Colors.lightBlueAccent,
       ),
       body: SafeArea(
