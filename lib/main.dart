@@ -1,3 +1,4 @@
+import 'package:chitchat/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:chitchat/screens/welcome_screen.dart';
 import 'package:chitchat/screens/login_screen.dart';
@@ -20,9 +21,10 @@ class FlashChat extends StatelessWidget {
           bodyText1: TextStyle(color: Colors.black),
         ),
       ),
-      //home: WelcomeScreen(),
-      initialRoute: WelcomeScreen.id,
+     // home: SplashScreen(),
+      initialRoute: SplashScreen.id,
       routes: {
+        SplashScreen.id: (context) =>SplashScreen(),
         WelcomeScreen.id: (context) =>WelcomeScreen(),
         LoginScreen.id: (context) =>LoginScreen(),
         RegistrationScreen.id: (context)=>RegistrationScreen(),
