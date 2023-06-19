@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:chitchat/screens/chat_screen.dart';
 
 class messageBubble extends StatelessWidget {
   messageBubble(this.sender,this.text,this.isMe);
