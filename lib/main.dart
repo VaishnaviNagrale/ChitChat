@@ -1,8 +1,8 @@
 import 'package:chitchat/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:chitchat/screens/welcome_screen.dart';
-import 'package:chitchat/screens/login_screen.dart';
-import 'package:chitchat/screens/registration_screen.dart';
+import 'package:chitchat/auth/email/login_screen.dart';
+import 'package:chitchat/auth/email/registration_screen.dart';
 import 'package:chitchat/screens/chat_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 

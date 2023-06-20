@@ -1,7 +1,7 @@
-import 'package:chitchat/screens/login_screen.dart';
-import 'package:chitchat/screens/registration_screen.dart';
+import 'package:chitchat/auth/email/login_screen.dart';
+import 'package:chitchat/auth/email/registration_screen.dart';
+import 'package:chitchat/auth/mobile_no/mobile_signIn.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/animation.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
 import '../components/rounded_button.dart';
@@ -12,22 +12,25 @@ class WelcomeScreen extends StatefulWidget {
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProviderStateMixin{
+class _WelcomeScreenState extends State<WelcomeScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController controller;
- late Animation animation;
+  late Animation animation;
   @override
-  void initState(){
+  void initState() {
     super.initState();
     controller = AnimationController(
-        duration: Duration(seconds: 1),
-        vsync: this,
+      duration: Duration(seconds: 1),
+      vsync: this,
     );
-    animation = ColorTween(begin: Colors.orange,end: Colors.white).animate(controller);
+    animation =
+        ColorTween(begin: Colors.orange, end: Colors.white).animate(controller);
     controller.forward();
     controller.addListener(() {
       setState(() {});
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +52,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                 ),
                 TypewriterAnimatedTextKit(
                   text: ['Chit Chat'],
-                  textStyle:TextStyle(
+                  textStyle: TextStyle(
                     fontSize: 40.0,
                     color: Colors.black,
                     fontWeight: FontWeight.w900,
@@ -60,11 +63,29 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
             SizedBox(
               height: 48.0,
             ),
-            RoundedButton(colour: Colors.lightBlueAccent, title: 'Log In', onPressed:(){
-              Navigator.pushNamed(context, LoginScreen.id);},
+            RoundedButton(
+              colour: Colors.lightBlueAccent,
+              title: 'Log In With Email',
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LoginScreen()));
+              },
             ),
-            RoundedButton(colour: Colors.blueAccent, title: 'Register', onPressed: (){
-              Navigator.pushNamed(context, RegistrationScreen.id);},
+            RoundedButton(
+              colour: Colors.lightBlueAccent,
+              title: 'Log In With Phone Number',
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MobileSignInScreen()));
+              },
+            ),
+            RoundedButton(
+              colour: Colors.blueAccent,
+              title: 'Register With Email',
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => RegistrationScreen()));
+              },
             ),
           ],
         ),
