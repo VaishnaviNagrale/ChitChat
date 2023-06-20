@@ -71,6 +71,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SizedBox(
               height: 250,
